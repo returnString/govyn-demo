@@ -24,11 +24,15 @@ class CalculatorAPI:
 	# get_ methods take a query string
 	# callers will receive a 400 Bad Request if they supply invalid values
 	async def get_add(self, a: int, b: int) -> Response:
+		'''Add two numbers together'''
+
 		return Response(a + b)
 
 	# post_ methods take a JSON request body
 	# also type-checked according to the dataclass definition
 	async def post_add(self, req: AddRequest) -> Response:
+		'''Add a whole bunch of numbers together'''
+
 		return Response(sum(req.numbers))
 
 app = create_app(CalculatorAPI())
