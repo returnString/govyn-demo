@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import List
 import os
 
-from govyn import create_app, run_app
+from govyn import create_app
 
 @dataclass
 class AddRequest:
@@ -32,4 +32,3 @@ class CalculatorAPI:
 		return Response(sum(req.numbers))
 
 app = create_app(CalculatorAPI())
-run_app(app, port = int(os.environ.get('PORT', 80)))
