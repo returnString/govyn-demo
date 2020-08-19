@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import List
 import os
 
-from govyn import create_app
+from govyn.app import create_app
 
 @dataclass
 class AddRequest:
